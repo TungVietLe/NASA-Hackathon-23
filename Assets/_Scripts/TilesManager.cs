@@ -7,6 +7,7 @@ public class TilesManager : MonoBehaviour
     [SerializeField] private ResourceManager resourceManager;
     [SerializeField] private Tile tileToPlaceTest;
     [SerializeField] private Transform titan;
+    [SerializeField] private MouseModeSwitcher mouseSwitcher;
 
     private Plane plane = new Plane(Vector3.up, 0);
   
@@ -33,7 +34,7 @@ public class TilesManager : MonoBehaviour
 
     private void HandleMouseInput()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && mouseSwitcher.mode == MouseMode.Build)
         {
             RaycastHit hit;
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
