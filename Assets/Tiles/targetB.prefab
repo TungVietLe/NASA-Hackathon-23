@@ -57,7 +57,7 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8749f8f323798c74a8e848c9793eeae7, type: 3}
-      insertIndex: -1
+      insertIndex: 1
       addedObject: {fileID: 8063062080531369972}
   m_SourcePrefab: {fileID: 100100000, guid: 8749f8f323798c74a8e848c9793eeae7, type: 3}
 --- !u!1 &8713620712630697262 stripped
@@ -77,5 +77,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4baf998a57e88b7468c2bcf47feab9e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  oxygen: 0
-  temperature: 0
+  oxygen: -11
+  temperature: 23

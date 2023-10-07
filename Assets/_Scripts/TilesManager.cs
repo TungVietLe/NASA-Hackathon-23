@@ -1,10 +1,10 @@
 using System.Collections.Generic;
 using UnityEngine;
-using static UnityEditor.PlayerSettings;
 
 public class TilesManager : MonoBehaviour
 {
     private Dictionary<Vector2Int, GameObject> grid = new Dictionary<Vector2Int, GameObject>();
+    [SerializeField] private ResourceManager resourceManager;
     [SerializeField] private Tile tileToPlaceTest;
     [SerializeField] private Transform parent;
 
@@ -51,6 +51,9 @@ public class TilesManager : MonoBehaviour
                 newTile.transform.position = hit.point;
                 newTile.transform.up = hit.normal;
                 newTile.transform.localScale /= 4;
+
+                resourceManager.Oxygen += newTile.oxygen;
+                resourceManager.Temperature += newTile.temperature;
             }
         }
         if (Input.GetKeyDown(KeyCode.Space))
