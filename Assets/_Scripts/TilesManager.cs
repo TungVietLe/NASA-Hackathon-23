@@ -6,7 +6,7 @@ public class TilesManager : MonoBehaviour
     private Dictionary<Vector2Int, GameObject> grid = new Dictionary<Vector2Int, GameObject>();
     [SerializeField] private ResourceManager resourceManager;
     [SerializeField] private Tile tileToPlaceTest;
-    [SerializeField] private Transform parent;
+    [SerializeField] private Transform titan;
 
     private Plane plane = new Plane(Vector3.up, 0);
   
@@ -40,14 +40,14 @@ public class TilesManager : MonoBehaviour
             if (Physics.Raycast(ray, out hit))
             {
                 Debug.Log(hit.normal);
-                for(int i = 0;i < parent.childCount; i++)
+                for(int i = 0;i < titan.childCount; i++)
                 {
-                    var child = parent.GetChild(i);
+                    var child = titan.GetChild(i);
                     if (Vector3.Distance(child.transform.position, hit.point) < 0.5f) return ;
                 }
 
 
-                var newTile = Instantiate(tileToPlaceTest, parent);
+                var newTile = Instantiate(tileToPlaceTest, titan);
                 newTile.transform.position = hit.point;
                 newTile.transform.up = hit.normal;
                 newTile.transform.localScale /= 4;
