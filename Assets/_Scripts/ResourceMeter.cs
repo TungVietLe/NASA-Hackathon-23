@@ -32,7 +32,7 @@ public class ResourceMeter : MonoBehaviour
             }
             else
             {
-                Debug.LogWarning($"Trying to set value of {slider.name} to {value}, which is greater than its max of {MaxAmount}");
+                //Debug.LogWarning($"Trying to set value of {slider.name} to {value}, which is greater than its max of {MaxAmount}");
             }
         }
     }
