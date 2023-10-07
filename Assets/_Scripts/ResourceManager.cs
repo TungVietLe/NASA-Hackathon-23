@@ -17,8 +17,30 @@ public class ResourceManager : MonoBehaviour
 
     private Dictionary<string, Resource> resources;
 
-    public int Oxygen { get => resources["oxygen"].Amount; set { resources["oxygen"].Amount = value; } }
-    public int Temperature { get => resources["temperature"].Amount; set { resources["temperature"].Amount = value; } }
+    public int Oxygen 
+    {
+        get => resources["oxygen"].Amount;
+        set 
+        {
+            int max = resources["oxygen"].Meter.MaxAmount;
+            if (value <= max)
+                resources["oxygen"].Amount = value;
+            else
+                Debug.LogWarning($"Trying to set value of Oxygen to {value}, which is greater than its max of {max}");
+        }
+    }
+    public int Temperature
+    {
+        get => resources["temperature"].Amount;
+        set 
+        {
+            int max = resources["temperature"].Meter.MaxAmount;
+            if (value <= resources["temperature"].Meter.MaxAmount)
+                resources["temperature"].Amount = value;
+            else
+                Debug.LogWarning($"Trying to set value of Temperature to {value}, which is greater than its max of {max}");
+        }
+    }
 
     [SerializeField] private ResourceMeter oxygenMeter;
     [SerializeField] private ResourceMeter temperatureMeter;
@@ -28,19 +50,19 @@ public class ResourceManager : MonoBehaviour
     {
         Debug.Log($"Pipeline is {UnityEngine.Rendering.GraphicsSettings.renderPipelineAsset.GetType().Name}");
 
-        resources = new()
+        resources = new Dictionary<string, Resource>
         {
             ["oxygen"] = new Resource(0, oxygenMeter),
             ["temperature"] = new Resource(-290, temperatureMeter)
         };
 
         // init oxygen min/max
-        resources["oxygen"].Meter.MinAmount = 0;
-        resources["oxygen"].Meter.MaxAmount = 100;
+        resources["oxygen"].Meter.MinAmount = 0; // our atmosphere is 21% oxygen, maybe consider maxing at 21?
+        resources["oxygen"].Meter.MaxAmount = 100; // think of these as percentages
 
         // init temp min/max
-        resources["temperature"].Meter.MinAmount = -290; // todo: check val
-        resources["temperature"].Meter.MaxAmount = 100; // todo: check val
+        resources["temperature"].Meter.MinAmount = -273; // absolute zero in Celsius
+        resources["temperature"].Meter.MaxAmount = 50; // human tolerance is ~45C, can die at higher temps
     }
 
     // Update is called once per frame
@@ -72,13 +94,13 @@ public class ResourceManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.O))
         {
             Oxygen += Oxygen + diff >= 0 ? diff : 0;
-            //Debug.Log($"Oxygen set to {Oxygen}");
+            Debug.Log($"Oxygen set to {Oxygen}");
         }
 
         if (Input.GetKeyDown(KeyCode.T))
         {
             Temperature += diff;
-            //Debug.Log($"Temperature set to {Temperature}");
+            Debug.Log($"Temperature set to {Temperature}");
         }
     }
 }
