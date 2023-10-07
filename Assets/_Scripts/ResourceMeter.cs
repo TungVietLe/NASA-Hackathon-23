@@ -26,13 +26,13 @@ public class ResourceMeter : MonoBehaviour
         get => amount;
         set
         {
-            if (!(minAmount < value && value < maxAmount))
+            if (!(MinAmount < value && value < MaxAmount))
             {
                 slider.value = value;
             }
             else
             {
-                Debug.LogWarning($"Trying to set value of {slider.name} to {value}, which is greater than its max of {maxAmount}");
+                Debug.LogWarning($"Trying to set value of {slider.name} to {value}, which is greater than its max of {MaxAmount}");
             }
         }
     }
