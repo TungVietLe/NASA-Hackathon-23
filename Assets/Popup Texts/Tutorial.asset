@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Key: Tutorial
   popups:
-  - Title: 
-    Body: 
-  - Title: 
-    Body: 
+  - Title: Welcome 1!
+    Body: Welcome 1 text.
+  - Title: Welcome 2!
+    Body: Welcome 2 text.

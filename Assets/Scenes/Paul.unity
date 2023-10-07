@@ -1444,6 +1444,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a7073894a75be34d9870a9adcf9a400, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TextPopup: {fileID: 4490055375951003251, guid: 191deb4c4a6c4a64284136a473a11368, type: 3}
   PopupSequences: []
 --- !u!1 &2046923896
 GameObject:
