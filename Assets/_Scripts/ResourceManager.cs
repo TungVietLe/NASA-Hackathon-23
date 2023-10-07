@@ -26,6 +26,8 @@ public class ResourceManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Debug.Log($"Pipeline is {UnityEngine.Rendering.GraphicsSettings.renderPipelineAsset.GetType().Name}");
+
         resources = new()
         {
             ["oxygen"] = new Resource(0, oxygenMeter),
@@ -70,13 +72,13 @@ public class ResourceManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.O))
         {
             Oxygen += Oxygen + diff >= 0 ? diff : 0;
-            Debug.Log($"Oxygen set to {Oxygen}");
+            //Debug.Log($"Oxygen set to {Oxygen}");
         }
 
         if (Input.GetKeyDown(KeyCode.T))
         {
             Temperature += diff;
-            Debug.Log($"Temperature set to {Temperature}");
+            //Debug.Log($"Temperature set to {Temperature}");
         }
     }
 }
