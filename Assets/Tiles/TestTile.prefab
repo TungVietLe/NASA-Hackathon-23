@@ -48,6 +48,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -5754084199372789682, guid: 501c806f377021c419f1b85d83abf812, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 8308308536106381945, guid: 501c806f377021c419f1b85d83abf812, type: 3}
     - target: {fileID: 919132149155446097, guid: 501c806f377021c419f1b85d83abf812, type: 3}
       propertyPath: m_Name
       value: TestTile
@@ -78,4 +82,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   oxygen: 20
-  temperature: -8
+  temperature: 31
