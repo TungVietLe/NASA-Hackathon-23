@@ -13,5 +13,6 @@ public class PopupSequence : ScriptableObject
         public string Body;
     }
 
+    public string Key;
     public List<Popup> popups = new();
 }
