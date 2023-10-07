@@ -57,12 +57,12 @@ public class ResourceManager : MonoBehaviour
         };
 
         // init oxygen min/max
-        resources["oxygen"].Meter.MinAmount = 0;
-        resources["oxygen"].Meter.MaxAmount = 100;
+        resources["oxygen"].Meter.MinAmount = 0; // our atmosphere is 21% oxygen, maybe consider maxing at 21?
+        resources["oxygen"].Meter.MaxAmount = 100; // think of these as percentages
 
         // init temp min/max
-        resources["temperature"].Meter.MinAmount = -290; // todo: check val, can we have negatives?
-        resources["temperature"].Meter.MaxAmount = 100; // todo: check val
+        resources["temperature"].Meter.MinAmount = -273; // absolute zero in Celsius
+        resources["temperature"].Meter.MaxAmount = 50; // human tolerance is ~45C, can die at higher temps
     }
 
     // Update is called once per frame
