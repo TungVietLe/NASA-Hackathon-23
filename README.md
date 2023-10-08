@@ -1,7 +1,7 @@
 # NASA-Hackathon-23
-- An interactive and engaging introduction to what it might take to terraform Titan or other similarly hostile environments/
-- Walks the player through the different terraforming tools available to them like electrolysis for extracting oxygen from Titan's vast subsurface oceans and through building furnaces to generate more heat on the planet by burning that generated oxygen./
-- The game will place a strong emphasis on the complexities of carefully balancing these different resources, showing how difficult such a task would be./
+- An interactive and engaging introduction to what it might take to terraform Titan or other similarly hostile environments.
+- Walks the player through the different terraforming tools available to them like electrolysis for extracting oxygen from Titan's vast subsurface oceans and through building furnaces to generate more heat on the planet by burning that generated oxygen.
+- The game will place a strong emphasis on the complexities of carefully balancing these different resources, showing how difficult such a task would be.
 
 
 # Credits
