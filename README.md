@@ -3,6 +3,7 @@
 - Walks the player through the different terraforming tools available to them like electrolysis for extracting oxygen from Titan's vast subsurface oceans and through building furnaces to generate more heat on the planet by burning that generated oxygen.
 - The game will place a strong emphasis on the complexities of carefully balancing these different resources, showing how difficult such a task would be.
 
+![Screenshot 2023-10-08 114632](https://github.com/TungVietLe/NASA-Hackathon-23/assets/99946449/6e498afc-2e1a-44b5-9abc-944c1d714532)
 
 # Credits
 Communication Satellite" (https://skfb.ly/oHNnR) by Harri Snellman is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).
