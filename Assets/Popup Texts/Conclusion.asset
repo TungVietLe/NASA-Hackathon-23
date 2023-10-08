@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71c94fb020f97364387a8caaf1f78901, type: 3}
+  m_Name: Conclusion
+  m_EditorClassIdentifier: 
+  Key: Conclusion
+  popups:
+  - Title: Thank You for Playing!
+    Body: "We hope you enjoyed your time terraforming and learning about Titan! We
+      have one more thing we want to tell you about before we\u2019re done.\r"
+  - Title: Scientific Accuracy (Part 1)
+    Body: While we did our best to create an equally scientific and engaging experience
+      This simulation is not meant to be 100% accurate to reality!
+  - Title: Scientific Accuracy (Part 2)
+    Body: Physical simulation of planets is an incredibly complex task. The systems
+      we simulate here are just part of the full picture.
+  - Title: Your Journey from Here
+    Body: "Thank you again for playing our game! There is so much more to explore
+      in the world of astronomy and we hope we were able to teach you something you
+      didn\u2019t know before!\r\n\r\nAll the best,\r\nTung & Paul"

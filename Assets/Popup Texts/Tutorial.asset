@@ -15,9 +15,10 @@ MonoBehaviour:
   Key: Tutorial
   popups:
   - Title: Welcome to Titan!
-    Body: "The year is 3023 and humanity is searching for a new home. You have been
+    Body: "The year is 3023 and humanity is searching for a new hoqme. You have been
       tasked with leading the effort to terraform Titan, Saturn\u2019s largest moon!"
-  - Title: Welcome 2!
-    Body: Welcome 2 text.
+  - Title: What is Terraforming?
+    Body: <b>Terraforming</b> is the process of changing a planet to make it easier
+      for humans to live on by making it warmer or making the air breathable.
   - Title: "Welcome 3!\t"
     Body: Welcome 3 text.

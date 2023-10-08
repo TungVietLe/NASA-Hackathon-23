@@ -1387,6 +1387,7 @@ MonoBehaviour:
   TextPopup: {fileID: 4490055375951003251, guid: 191deb4c4a6c4a64284136a473a11368, type: 3}
   PopupSequences:
   - {fileID: 11400000, guid: 95150394d30b539438e096245fdb000d, type: 2}
+  - {fileID: 11400000, guid: 5540d9537bace204bae369e6de18007c, type: 2}
 --- !u!1 &2046923896
 GameObject:
   m_ObjectHideFlags: 0

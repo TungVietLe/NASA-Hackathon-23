@@ -30,7 +30,7 @@ public class PopupManager : MonoBehaviour
         //! DEBUGGING!
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            InitPopupSequence("Tutorial");
+            InitPopupSequence("Conclusion");
         }
     }
 
