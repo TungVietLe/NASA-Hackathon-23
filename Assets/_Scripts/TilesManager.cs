@@ -3,15 +3,27 @@ using UnityEngine;
 
 public class TilesManager : MonoBehaviour
 {
+    public static TilesManager Instance { get; private set; }
+    public Tile TileToPlace;
     private Dictionary<Vector2Int, GameObject> grid = new Dictionary<Vector2Int, GameObject>();
     [SerializeField] private ResourceManager resourceManager;
-    [SerializeField] private Tile tileToPlaceTest;
     [SerializeField] private Transform titan;
     [SerializeField] private MouseModeSwitcher mouseSwitcher;
 
     private Plane plane = new Plane(Vector3.up, 0);
-  
-        
+
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance= this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+
 
     public void PlaceTile(Tile tile, Vector2Int pos)
     {
@@ -34,7 +46,7 @@ public class TilesManager : MonoBehaviour
 
     private void HandleMouseInput()
     {
-        if (Input.GetMouseButtonDown(0) && mouseSwitcher.mode == MouseMode.Build)
+        if (Input.GetMouseButtonDown(0) && mouseSwitcher.mode == MouseMode.Build && TileToPlace != null)
         {
             RaycastHit hit;
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -48,7 +60,7 @@ public class TilesManager : MonoBehaviour
                 }
 
 
-                var newTile = Instantiate(tileToPlaceTest, titan);
+                var newTile = Instantiate(TileToPlace, titan);
                 newTile.transform.position = hit.point;
                 newTile.transform.up = hit.normal;
 

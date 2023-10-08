@@ -54,7 +54,7 @@ PrefabInstance:
       objectReference: {fileID: 8308308536106381945, guid: 501c806f377021c419f1b85d83abf812, type: 3}
     - target: {fileID: 919132149155446097, guid: 501c806f377021c419f1b85d83abf812, type: 3}
       propertyPath: m_Name
-      value: TestTile
+      value: test3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -81,5 +81,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4baf998a57e88b7468c2bcf47feab9e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  thumbnail: {fileID: 21300000, guid: 5952fd1adfff00149a6422296fb3ad06, type: 3}
   oxygen: 20
   temperature: 31
