@@ -3279,15 +3279,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b0a9bccd6089d6542839751af02e6ad1, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -405
+      value: -487.67
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b0a9bccd6089d6542839751af02e6ad1, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.9271839
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b0a9bccd6089d6542839751af02e6ad1, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0.37460646
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b0a9bccd6089d6542839751af02e6ad1, type: 3}
       propertyPath: m_LocalRotation.y
@@ -3299,7 +3299,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b0a9bccd6089d6542839751af02e6ad1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
+      value: -44
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b0a9bccd6089d6542839751af02e6ad1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
@@ -3315,15 +3315,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -7284918505069793120, guid: b0a9bccd6089d6542839751af02e6ad1, type: 3}
       propertyPath: m_LocalScale.x
-      value: 34.96
+      value: -30.7
       objectReference: {fileID: 0}
     - target: {fileID: -7284918505069793120, guid: b0a9bccd6089d6542839751af02e6ad1, type: 3}
       propertyPath: m_LocalScale.y
-      value: 34.96
+      value: -30.7
       objectReference: {fileID: 0}
     - target: {fileID: -7284918505069793120, guid: b0a9bccd6089d6542839751af02e6ad1, type: 3}
       propertyPath: m_LocalScale.z
-      value: 34.96
+      value: -30.7
       objectReference: {fileID: 0}
     - target: {fileID: -7284918505069793120, guid: b0a9bccd6089d6542839751af02e6ad1, type: 3}
       propertyPath: m_ConstrainProportionsScale
@@ -3677,8 +3677,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 1095958360}
-  mouseRotateSpeed: 4
-  slerpValue: 0.15
+  mouseRotateSpeed: 5
+  slerpValue: 0.1
 --- !u!1001 &1409548211
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4253,7 +4253,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 75
+  field of view: 49
   orthographic: 0
   orthographic size: 4.2
   m_Depth: -1
