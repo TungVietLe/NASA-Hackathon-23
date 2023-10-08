@@ -75,7 +75,7 @@ public class PopupManager : MonoBehaviour
             // not best practice to have this hacky thing here, but otherwise harmless
             if (key.Equals("Conclusion") && i == sequence.popups.Count - 1)
             {
-                DoublePopupHeight(ref popupObj, ref content);
+                DoublePopupHeight(ref popupObj);
             }
 
             if (i == 0)
