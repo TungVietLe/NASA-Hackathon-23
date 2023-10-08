@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -30,15 +31,27 @@ public class PopupManager : MonoBehaviour
         //! DEBUGGING!
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            InitPopupSequence("Tutorial");
+            InitPopupSequence("Conclusion");
         }
+    }
+
+    public void ClearPopups()
+    {
+        // TODO: Not Implemented
+    }
+
+    private void DoublePopupHeight(ref GameObject popupObj)
+    {
+        // not very generic, but fine for now
+        RectTransform rt = popupObj.GetComponent<RectTransform>();
+        rt.sizeDelta = new Vector2(rt.sizeDelta.x, rt.sizeDelta.y * 1.5f);
     }
 
     // TODO: make this procedure much more generic - this is a great start, though
     /// <summary>
     /// Run the tutorial sequence of text boxes
     /// </summary>
-    public void InitPopupSequence(string key)
+    public void InitPopupSequence(string key, Action onEndOfSequence=null)
     {
         PopupSequence sequence = PopupSequences.FirstOrDefault(seq => seq.Key.Equals(key));
 
@@ -58,6 +71,12 @@ public class PopupManager : MonoBehaviour
 
             PopupContent content = popupObj.GetComponent<PopupContent>();
             content.InitText(popup.Title, popup.Body);
+
+            // not best practice to have this hacky thing here, but otherwise harmless
+            if (key.Equals("Conclusion") && i == sequence.popups.Count - 1)
+            {
+                DoublePopupHeight(ref popupObj);
+            }
 
             if (i == 0)
             {
@@ -105,6 +124,10 @@ public class PopupManager : MonoBehaviour
                     foreach ((GameObject obj, PopupContent content) in popupObjects)
                     {
                         Destroy(obj);
+                    }
+                    if (onEndOfSequence != null)
+                    {
+                        onEndOfSequence();
                     }
                 }
             });
