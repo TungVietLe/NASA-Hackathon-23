@@ -6,7 +6,8 @@ public class PopupRunner : MonoBehaviour
 {
     public TextMeshProUGUI Title;
     public TextMeshProUGUI Body;
-    public Button continueButton;
+    public Button BackButton;
+    public Button ContinueButton;
 
     public void InitText(string title, string body)
     {

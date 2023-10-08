@@ -8,6 +8,7 @@ public class PopupManager : MonoBehaviour
 {
     public static PopupManager Instance { get; private set; }
 
+    public Canvas canvas;
     public GameObject TextPopup;
     public List<PopupSequence> PopupSequences;
 
@@ -33,6 +34,7 @@ public class PopupManager : MonoBehaviour
         }
     }
 
+    // TODO: make this procedure much more generic - this is a great start, though
     /// <summary>
     /// Run the tutorial sequence of text boxes
     /// </summary>
@@ -48,18 +50,27 @@ public class PopupManager : MonoBehaviour
 
         // init text across all popups in sequence
         List<(GameObject, PopupRunner)> popupObjects = new();
-        foreach (Popup popup in sequence.popups)
+        for (int i = 0; i < sequence.popups.Count; ++i)
         {
-            // TODO: will this make the popup flicker?
-            GameObject currentPopup = Instantiate(TextPopup, Vector3.zero, Quaternion.identity);
+            Popup popup = sequence.popups[i];
 
-            PopupRunner runner = currentPopup.GetComponent<PopupRunner>();
+            // TODO: will this make the popup flicker?
+            GameObject popupObj = Instantiate(TextPopup, canvas.transform.position, Quaternion.identity, canvas.transform);
+
+            PopupRunner runner = popupObj.GetComponent<PopupRunner>();
             runner.InitText(popup.Title, popup.Body);
 
-            if (!ReferenceEquals(popup, sequence.popups[0]))
-                currentPopup.SetActive(false);
+            if (i == 0)
+            {
+                // if first popup in sequence, set back button invisible
+                runner.BackButton.gameObject.SetActive(false);
+            }
+            else
+            {
+                popupObj.SetActive(false);
+            }
 
-            popupObjects.Add((currentPopup, runner));
+            popupObjects.Add((popupObj, runner));
         }
 
         //! invariant: popupObjects.Count == sequence.popups.Length
@@ -68,12 +79,32 @@ public class PopupManager : MonoBehaviour
         for (int i = 0; i < popupObjects.Count; ++i)
         {
             (GameObject obj, PopupRunner runner) = popupObjects[i];
+            int iCopy = i; // c# lambda captures by reference, so we need to copy first
 
-            runner.continueButton.onClick.AddListener(() =>
+            runner.BackButton.onClick.AddListener(() =>
+            {
+                if (iCopy == 0) return;
+
+                // no need to check, since we already know iCopy != 0
+                obj.SetActive(false);
+                popupObjects[iCopy - 1].Item1.SetActive(true);
+            });
+
+            runner.ContinueButton.onClick.AddListener(() =>
             {
                 obj.SetActive(false);
-                if (i + 1 < popupObjects.Count)
-                    popupObjects[i + 1].Item1.SetActive(true);
+
+                if (iCopy + 1 < popupObjects.Count)
+                {
+                    popupObjects[iCopy + 1].Item1.SetActive(true);
+                }
+                else
+                {
+                    foreach ((GameObject obj, PopupRunner runner) in popupObjects)
+                    {
+                        Destroy(obj);
+                    }
+                }
             });
         }
     }
