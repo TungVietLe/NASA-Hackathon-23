@@ -32,6 +32,10 @@ public class ResourceMeter : MonoBehaviour
     public int Amount
     {
         get => amount;
-        set { slider.value = value; }
+        set 
+        {
+            amount = value;
+            slider.value = value;
+        }
     }
 }
