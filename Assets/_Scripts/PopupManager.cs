@@ -30,7 +30,7 @@ public class PopupManager : MonoBehaviour
         //! DEBUGGING!
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            Tutorial();
+            InitPopupSequence("Tutorial");
         }
     }
 
@@ -38,13 +38,13 @@ public class PopupManager : MonoBehaviour
     /// <summary>
     /// Run the tutorial sequence of text boxes
     /// </summary>
-    public void Tutorial()
+    public void InitPopupSequence(string key)
     {
-        PopupSequence sequence = PopupSequences.FirstOrDefault(seq => seq.Key.Equals("Tutorial"));
+        PopupSequence sequence = PopupSequences.FirstOrDefault(seq => seq.Key.Equals(key));
 
         if (sequence == null)
         {
-            Debug.LogWarning("No PopupSequence with name \"Tutorial\" found");
+            Debug.LogWarning($"No PopupSequence with key \"{key}\" found");
             return;
         }
 
