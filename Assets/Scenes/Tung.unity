@@ -1421,7 +1421,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!135 &512525902
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1522,7 +1522,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   subtract: 1
   subdivisions: 2
-  offset: 1
+  offset: 5
   insideMaterial: {fileID: 2100000, guid: fc6e029c93d34ad48a8825cd04d1cec9, type: 2}
 --- !u!114 &512525907
 MonoBehaviour:
