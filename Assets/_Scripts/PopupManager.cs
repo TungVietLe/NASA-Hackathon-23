@@ -2,6 +2,8 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
+using Popup = PopupSequence.Popup;
+
 public class PopupManager : MonoBehaviour
 {
     public static PopupManager Instance { get; private set; }
@@ -24,6 +26,7 @@ public class PopupManager : MonoBehaviour
 
     private void Update()
     {
+        //! DEBUGGING!
         if (Input.GetKeyDown(KeyCode.Space))
         {
             Tutorial();
@@ -44,16 +47,34 @@ public class PopupManager : MonoBehaviour
         }
 
         // init text across all popups in sequence
-        foreach (PopupSequence.Popup popup in sequence.popups)
+        List<(GameObject, PopupRunner)> popupObjects = new();
+        foreach (Popup popup in sequence.popups)
         {
+            // TODO: will this make the popup flicker?
             GameObject currentPopup = Instantiate(TextPopup, Vector3.zero, Quaternion.identity);
 
-            currentPopup.GetComponent<PopupRunner>().InitText(popup.Title, popup.Body);
+            PopupRunner runner = currentPopup.GetComponent<PopupRunner>();
+            runner.InitText(popup.Title, popup.Body);
 
-            currentPopup.SetActive(false);
+            if (!ReferenceEquals(popup, sequence.popups[0]))
+                currentPopup.SetActive(false);
+
+            popupObjects.Add((currentPopup, runner));
         }
 
-        // bind all continue button delegates to deactivate current popup and move on to next
-        // TODO
+        //! invariant: popupObjects.Count == sequence.popups.Length
+
+        // bind all continue button delegates to deactivate current popup and move on to next popup
+        for (int i = 0; i < popupObjects.Count; ++i)
+        {
+            (GameObject obj, PopupRunner runner) = popupObjects[i];
+
+            runner.continueButton.onClick.AddListener(() =>
+            {
+                obj.SetActive(false);
+                if (i + 1 < popupObjects.Count)
+                    popupObjects[i + 1].Item1.SetActive(true);
+            });
+        }
     }
 }
