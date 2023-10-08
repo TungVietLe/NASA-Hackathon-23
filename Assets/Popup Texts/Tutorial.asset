@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71c94fb020f97364387a8caaf1f78901, type: 3}
   m_Name: Tutorial
   m_EditorClassIdentifier: 
-  Key: Tutorial
+  Key: Welcome
   popups:
   - Title: Welcome to Titan!
     Body: "The year is 3023 and humanity is searching for a new hoqme. You have been
