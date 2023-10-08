@@ -14,8 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Key: Tutorial
   popups:
-  - Title: Welcome 1!
-    Body: Welcome 1 text.
+  - Title: Welcome to Titan!
+    Body: "The year is 3023 and humanity is searching for a new home. You have been
+      tasked with leading the effort to terraform Titan, Saturn\u2019s largest moon!"
   - Title: Welcome 2!
     Body: Welcome 2 text.
   - Title: "Welcome 3!\t"
