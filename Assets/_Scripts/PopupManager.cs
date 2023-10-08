@@ -49,28 +49,30 @@ public class PopupManager : MonoBehaviour
         }
 
         // init text across all popups in sequence
-        List<(GameObject, PopupRunner)> popupObjects = new();
+        List<(GameObject, PopupContent)> popupObjects = new();
         for (int i = 0; i < sequence.popups.Count; ++i)
         {
             Popup popup = sequence.popups[i];
 
-            // TODO: will this make the popup flicker?
             GameObject popupObj = Instantiate(TextPopup, canvas.transform.position, Quaternion.identity, canvas.transform);
 
-            PopupRunner runner = popupObj.GetComponent<PopupRunner>();
-            runner.InitText(popup.Title, popup.Body);
+            PopupContent content = popupObj.GetComponent<PopupContent>();
+            content.InitText(popup.Title, popup.Body);
 
             if (i == 0)
             {
                 // if first popup in sequence, set back button invisible
-                runner.BackButton.gameObject.SetActive(false);
+                content.BackButton.gameObject.SetActive(false);
             }
             else
             {
                 popupObj.SetActive(false);
             }
 
-            popupObjects.Add((popupObj, runner));
+            // set progress count at bottom of popup for this popup
+            content.ProgressCount.text = $"{i + 1}/{sequence.popups.Count}";
+
+            popupObjects.Add((popupObj, content));
         }
 
         //! invariant: popupObjects.Count == sequence.popups.Length
@@ -78,10 +80,10 @@ public class PopupManager : MonoBehaviour
         // bind all continue button delegates to deactivate current popup and move on to next popup
         for (int i = 0; i < popupObjects.Count; ++i)
         {
-            (GameObject obj, PopupRunner runner) = popupObjects[i];
+            (GameObject obj, PopupContent content) = popupObjects[i];
             int iCopy = i; // c# lambda captures by reference, so we need to copy first
 
-            runner.BackButton.onClick.AddListener(() =>
+            content.BackButton.onClick.AddListener(() =>
             {
                 if (iCopy == 0) return;
 
@@ -90,7 +92,7 @@ public class PopupManager : MonoBehaviour
                 popupObjects[iCopy - 1].Item1.SetActive(true);
             });
 
-            runner.ContinueButton.onClick.AddListener(() =>
+            content.ContinueButton.onClick.AddListener(() =>
             {
                 obj.SetActive(false);
 
@@ -100,7 +102,7 @@ public class PopupManager : MonoBehaviour
                 }
                 else
                 {
-                    foreach ((GameObject obj, PopupRunner runner) in popupObjects)
+                    foreach ((GameObject obj, PopupContent content) in popupObjects)
                     {
                         Destroy(obj);
                     }
