@@ -51,7 +51,6 @@ public class TilesManager : MonoBehaviour
                 var newTile = Instantiate(tileToPlaceTest, titan);
                 newTile.transform.position = hit.point;
                 newTile.transform.up = hit.normal;
-                newTile.transform.localScale /= 4;
 
                 resourceManager.Oxygen += newTile.oxygen;
                 resourceManager.Temperature += newTile.temperature;
