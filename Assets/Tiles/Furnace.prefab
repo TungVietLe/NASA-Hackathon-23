@@ -9,6 +9,18 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 501c806f377021c419f1b85d83abf812, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 501c806f377021c419f1b85d83abf812, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 501c806f377021c419f1b85d83abf812, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 501c806f377021c419f1b85d83abf812, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0
       objectReference: {fileID: 0}
@@ -48,13 +60,29 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 501c806f377021c419f1b85d83abf812, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 501c806f377021c419f1b85d83abf812, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 501c806f377021c419f1b85d83abf812, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e29f89eded2b32e4ea9fc28ddea59e5b, type: 2}
+    - target: {fileID: -7511558181221131132, guid: 501c806f377021c419f1b85d83abf812, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: -8976064437032432714, guid: 501c806f377021c419f1b85d83abf812, type: 3}
     - target: {fileID: -5754084199372789682, guid: 501c806f377021c419f1b85d83abf812, type: 3}
       propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: 8308308536106381945, guid: 501c806f377021c419f1b85d83abf812, type: 3}
+      objectReference: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
     - target: {fileID: 919132149155446097, guid: 501c806f377021c419f1b85d83abf812, type: 3}
       propertyPath: m_Name
-      value: test3
+      value: target 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -81,6 +109,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4baf998a57e88b7468c2bcf47feab9e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thumbnail: {fileID: 21300000, guid: 5952fd1adfff00149a6422296fb3ad06, type: 3}
-  oxygen: 20
+  thumbnail: {fileID: 21300000, guid: 5c7ffd45c62340345a6b360711406dd0, type: 3}
+  oxygen: -20
   temperature: 31
