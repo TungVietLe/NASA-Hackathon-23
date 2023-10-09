@@ -20,5 +20,6 @@ MonoBehaviour:
   - Title: What is Terraforming?
     Body: <b>Terraforming</b> is the process of changing a planet to make it easier
       for humans to live on by making it warmer or making the air breathable.
-  - Title: "Welcome 3!\t"
-    Body: Welcome 3 text.
+  - Title: Jump In!
+    Body: An interactive and engaging introduction to what it might take to terraform
+      Titan or other similarly hostile environments.
