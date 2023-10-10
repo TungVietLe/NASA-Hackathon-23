@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Black-theme.unity
+    guid: f0caeae72e8fcb9479d53ea5426f7419
   m_configObjects: {}
