@@ -1,2 +1,6 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+
+# exclude HLSL and ShaderLab from tracked languages
+*.hlsl linguist-disable=all
+*.shader linguist-disable=all
