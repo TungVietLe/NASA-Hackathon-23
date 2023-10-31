@@ -2,5 +2,7 @@
 * text=auto
 
 # exclude HLSL and ShaderLab from tracked languages
+**/shaders/* linguist-vendored=true
+**/cginc/* linguist-vendored=true
 *.hlsl linguist-disable=all
 *.shader linguist-disable=all
