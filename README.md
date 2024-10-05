@@ -5,6 +5,9 @@
 
 ![Screenshot 2023-10-08 114632](https://github.com/TungVietLe/NASA-Hackathon-23/assets/99946449/6e498afc-2e1a-44b5-9abc-944c1d714532)
 
+# Itch.io page
+<mark>[PLAYABLE HERE](https://21pdavis.itch.io/titan-terraforming)</mark>
+
 # Credits
 Communication Satellite" (https://skfb.ly/oHNnR) by Harri Snellman is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).
 
